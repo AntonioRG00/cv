@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --bs-body-bg: #000000;
+  --bs-body-color: #eeeeee;
+  --bs-primary: #00adb5;
+  --bs-body-font-size: 1.5rem;
+  --bs-body-font-weight: 600;
+}
+
+.container-verically-centered {
+  height: 100vh;
+  position: relative;
+}
+
+.div-verically-centered {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
