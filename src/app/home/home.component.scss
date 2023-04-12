@@ -1,9 +1,20 @@
 .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
+  border-right: 0.25em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 2s steps(80, end), blink-caret 0.60s step-end infinite;
+  animation: typing 2s steps(120, end), blink-caret 0.65s step-end infinite;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: 5s showText;
+}
+
+.textWriterWrapper > div {
+  display: inline-block;
 }
 
 /* The typing effect */
@@ -25,10 +36,6 @@
   50% {
     border-color: orange;
   }
-}
-
-.fade-in {
-  animation: 5s showText;
 }
 
 @keyframes showText {

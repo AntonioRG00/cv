@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="container-vertical-center">
+            <div [@slideToTheRight]="activateslideToTheRight(outlet)" [@slideToTheLeft]="activateslideToTheLeft(outlet)"
+                [@slideToTheTop]="activateSlideToTheTop(outlet)" [@slideToTheBottom]="activateSlideToTheBottom(outlet)">
+                
+                <router-outlet #outlet="outlet"></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

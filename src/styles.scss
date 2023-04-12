@@ -8,9 +8,10 @@
   --bs-body-font-weight: 600;
 }
 
-.container-verically-centered {
-  height: 100vh;
-  position: relative;
+.container-vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
 }
 
 .div-verically-centered {
@@ -19,4 +20,23 @@
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.next-button {
+  background-color: black;
+  color: white;
+  border: 2px solid #ccc;
+  animation: showText 5s;
+  font-size: 50px;
+  padding: 0px 15px 0px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00adb5;
+    color: black;
+  }
+}
+
+.next-button-icon {
+  font-size: 50px;
 }
