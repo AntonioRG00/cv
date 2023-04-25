@@ -6,10 +6,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { CoursesComponent } from './courses/courses.component';
-import { ExperienceComponent } from './experience/experience.component';
+import { HomeComponent } from './navigation_pages/home/home.component';
+import { ContactComponent } from './navigation_pages/contact/contact.component';
+import { CoursesComponent } from './navigation_pages/courses/courses.component';
+import { ExperienceComponent } from './navigation_pages/experience/experience.component';
 
 @NgModule({
   declarations: [

@@ -13,38 +13,18 @@ export class AppComponent {
   constructor(router: Router) { }
 
   activateslideToTheRight(outlet: RouterOutlet) {
-    try {
-      return outlet.activatedRouteData['animation'] === 'slideToTheRight';
-    } finally {
-      this.disableAnimation(outlet);
-    }
+    return outlet.activatedRouteData['animation'] === 'slideToTheRight';
   }
 
   activateSlideToTheTop(outlet: RouterOutlet) {
-    try {
-      return outlet.activatedRouteData['animation'] === 'slideToTheTop';
-    } finally {
-      this.disableAnimation(outlet);
-    }
+    return outlet.activatedRouteData['animation'] === 'slideToTheTop';
   }
 
   activateslideToTheLeft(outlet: RouterOutlet) {
-    try {
-      return outlet.activatedRouteData['animation'] === 'slideToTheLeft';
-    } finally {
-      this.disableAnimation(outlet);
-    }
+    return outlet.activatedRouteData['animation'] === 'slideToTheLeft';
   }
 
   activateSlideToTheBottom(outlet: RouterOutlet) {
-    try {
-      return outlet.activatedRouteData['animation'] === 'slideToTheBottom';
-    } finally {
-      this.disableAnimation(outlet);
-    }
-  }
-
-  disableAnimation(outlet: RouterOutlet) {
-    outlet.activatedRouteData['animation'] = 'none';
+    return outlet.activatedRouteData['animation'] === 'slideToTheBottom';
   }
 }
