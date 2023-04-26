@@ -12,6 +12,8 @@ import { CoursesComponent } from './navigation_pages/courses/courses.component';
 import { ExperienceComponent } from './navigation_pages/experience/experience.component';
 import { TextWriterComponent } from './navigation_pages/home/text-writer/text-writer.component';
 
+import { ButtonModule } from 'primeng/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { TextWriterComponent } from './navigation_pages/home/text-writer/text-wr
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
