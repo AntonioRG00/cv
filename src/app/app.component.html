@@ -1,19 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="container-vertical-center">
-            <div [@slideToTheRight] *ngIf="animations['slideToTheRight']()">
-                <router-outlet></router-outlet>
-            </div>
-            <div [@slideToTheLeft] *ngIf="animations['slideToTheLeft']()">
-                <router-outlet></router-outlet>
-            </div>
-            <div [@slideToTheTop] *ngIf="animations['slideToTheTop']()">
-                <router-outlet></router-outlet>
-            </div>
-            <div [@slideToTheBottom] *ngIf="animations['slideToTheBottom']()">
-                <router-outlet></router-outlet>
-            </div>
-            <div *ngIf="animations['none']()">
+            <div [@routeAnimations]="getRouteAnimationData()" >
                 <router-outlet></router-outlet>
             </div>
         </div>

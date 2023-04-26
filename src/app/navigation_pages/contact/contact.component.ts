@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationBaseComponent } from '../navigation_base';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,13 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent extends NavigationBaseComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
-  constructor(private router: Router, route: ActivatedRoute) {
-    super();
-  }
+  constructor(private router: Router, route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.disableAnimation();
-  }
+  ngOnInit(): void { }
 }
