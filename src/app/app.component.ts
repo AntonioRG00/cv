@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { slideToTheRight, slideToTheTop, slideToTheLeft, slideToTheBottom } from './app.animation';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationStart, Router, RouterOutlet, RoutesRecognized } from '@angular/router';
+import { filter, pairwise } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +11,41 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(router: Router) { }
-
-  activateslideToTheRight(outlet: RouterOutlet) {
-    return outlet.activatedRouteData['animation'] === 'slideToTheRight';
+  private navigationData = {
+    currentUrl: '',
+    previousUrl: ''
   }
 
-  activateSlideToTheTop(outlet: RouterOutlet) {
-    return outlet.activatedRouteData['animation'] === 'slideToTheTop';
+  animations = {
+    'slideToTheRight': () => {
+      return (this.navigationData.previousUrl === 'home' && this.navigationData.currentUrl === 'experience') 
+        || (this.navigationData.previousUrl === 'contact' && this.navigationData.currentUrl === 'courses');
+    },
+    'slideToTheBottom': () => {
+      return (this.navigationData.previousUrl === 'experience' && this.navigationData.currentUrl === 'courses');
+    },
+    'slideToTheLeft': () => {
+      return (this.navigationData.previousUrl === 'courses' && this.navigationData.currentUrl === 'contact') 
+        || (this.navigationData.previousUrl === 'experience' && this.navigationData.currentUrl === 'home');
+    },
+    'slideToTheTop': () => {
+      return this.navigationData.previousUrl === 'courses' && this.navigationData.currentUrl === 'experience';
+    },
+    'none': () => {
+      return !this.animations['slideToTheRight']() && !this.animations['slideToTheBottom']() && !this.animations['slideToTheLeft']() && !this.animations['slideToTheTop']();
+    }
   }
 
-  activateslideToTheLeft(outlet: RouterOutlet) {
-    return outlet.activatedRouteData['animation'] === 'slideToTheLeft';
-  }
+  constructor(router: Router) {
+    router.events.pipe(filter((evt: any) => evt instanceof RoutesRecognized), pairwise()).subscribe((events: RoutesRecognized[]) => {
+      this.navigationData.previousUrl = events[0].urlAfterRedirects.replace('/', '');
+      this.navigationData.currentUrl = events[1].urlAfterRedirects.replace('/', '');
 
-  activateSlideToTheBottom(outlet: RouterOutlet) {
-    return outlet.activatedRouteData['animation'] === 'slideToTheBottom';
+      console.debug('Navigation data: ', this.navigationData);
+      console.debug('Slide Right: ', this.animations['slideToTheRight']());
+      console.debug('Slide Bottom: ', this.animations['slideToTheBottom']());
+      console.debug('Slide Left: ', this.animations['slideToTheLeft']());
+      console.debug('Slide Top: ', this.animations['slideToTheTop']());
+    });
   }
 }

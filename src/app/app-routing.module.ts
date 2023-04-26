@@ -12,19 +12,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent, data: { animation: 'none' }
+    component: HomeComponent
   },
   {
     path: 'experience',
-    component: ExperienceComponent, data: { animation: 'slideToTheRight' }
+    component: ExperienceComponent
   },
   {
     path: 'courses',
-    component: CoursesComponent, data: { animation: 'slideToTheBottom' }
+    component: CoursesComponent
   },
   {
     path: 'contact',
-    component: ContactComponent, data: { animation: 'slideToTheLeft' }
+    component: ContactComponent
   },
   {
     path: '**',
