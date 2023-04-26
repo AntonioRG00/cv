@@ -13,7 +13,7 @@ export class CoursesComponent extends NavigationBaseComponent implements OnInit 
   faArrowLeftLong = faArrowLeftLong;
 
   constructor(private router: Router, route: ActivatedRoute) {
-    super(route);
+    super();
   }
 
   ngOnInit(): void {

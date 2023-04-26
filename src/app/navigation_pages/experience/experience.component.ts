@@ -13,7 +13,7 @@ export class ExperienceComponent extends NavigationBaseComponent implements OnIn
   faArrowDownLong = faArrowDownLong;
 
   constructor(private router: Router, route: ActivatedRoute) {
-    super(route);
+    super();
   }
 
   ngOnInit(): void {

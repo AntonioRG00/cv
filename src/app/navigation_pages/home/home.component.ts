@@ -14,7 +14,7 @@ export class HomeComponent extends NavigationBaseComponent implements OnInit {
   faArrowRightLong = faArrowRightLong;
 
   constructor(private router: Router, route: ActivatedRoute) {
-    super(route);
+    super();
   }
 
   ngOnInit(): void {
