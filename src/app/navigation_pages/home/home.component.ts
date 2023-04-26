@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDownLong, faArrowLeftLong, faArrowRightLong, faArrowUpLong } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,6 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   faArrowRightLong = faArrowRightLong;
+  faArrowLeftLong = faArrowLeftLong;
+  faArrowUpLong = faArrowUpLong;
+  faArrowDownLong = faArrowDownLong;
 
   constructor(private router: Router, route: ActivatedRoute) { }
 

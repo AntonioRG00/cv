@@ -8,18 +8,20 @@
   --bs-body-font-weight: 600;
 }
 
-.container-vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-}
-
-.div-verically-centered {
-  margin: 0;
+.verically-centered-left {
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  left: 10px;
+}
+
+.verically-centered-right {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .next-button {

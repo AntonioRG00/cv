@@ -10,6 +10,7 @@ import { HomeComponent } from './navigation_pages/home/home.component';
 import { ContactComponent } from './navigation_pages/contact/contact.component';
 import { CoursesComponent } from './navigation_pages/courses/courses.component';
 import { ExperienceComponent } from './navigation_pages/experience/experience.component';
+import { TextWriterComponent } from './navigation_pages/home/text-writer/text-writer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ExperienceComponent } from './navigation_pages/experience/experience.co
     HomeComponent,
     ContactComponent,
     CoursesComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    TextWriterComponent
   ],
   imports: [
     BrowserModule,
