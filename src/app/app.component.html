@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="container-vertical-center">
+            <div [@routeAnimations]="getRouteAnimationData()" >
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
